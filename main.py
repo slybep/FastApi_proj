@@ -23,7 +23,7 @@ def create_book(payload: BookCreateDTO) -> BookDTO:
 @app.put("/{id}")
 def change_book(id: str, payload: BookCreateDTO) -> BookDTO:
     if id == '':
-        return HTTPException(status_code=404, detail='Id is empty')
+        raise HTTPException(status_code=404, detail='Id is empty')
     
     for i, val in enumerate(book):
         if val.id == id:
@@ -34,7 +34,7 @@ def change_book(id: str, payload: BookCreateDTO) -> BookDTO:
 @app.delete("/{id}")
 def delete_book(id: str) -> BookDTO:
     if id == '':
-        return HTTPException(status_code=404, detail='Id is empty')
+        raise HTTPException(status_code=404, detail='Id is empty')
     
     for i, val in enumerate(book):
         if val.id == id:
