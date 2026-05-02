@@ -1,0 +1,8 @@
+.env
+.pre-commit-config
+alembic.ini
+**/venv
+**/__pycache__
+.ruff_cache/
+.mypy.cache/
+**/alembic/
